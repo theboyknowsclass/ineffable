@@ -76,7 +76,7 @@ jobs:
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         env: 
-          NEXT_PUBLIC_EMAILER_URI: ${{ secrets.EMAULER_URI }}
+          NEXT_PUBLIC_EMAILER_URI: ${{ secrets.EMAILER_URI }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
