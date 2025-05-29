@@ -27,9 +27,9 @@ concurrency:
 jobs:
   # Build job
   build:
-    runs-on: ubuntu-latest
     environment:
       name: github-pages
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
