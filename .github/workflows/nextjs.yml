@@ -27,6 +27,8 @@ concurrency:
 jobs:
   # Build job
   build:
+    env: 
+      NEXT_PUBLIC_EMAILER_URI: 'https://rl3iiurrsbnmyjubarps3jzq740dqmuy.lambda-url.us-east-1.on.aws/'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
