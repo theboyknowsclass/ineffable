@@ -12,6 +12,11 @@ export default function Contact() {
     message: "",
   });
 
+  const [response, setResponse] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -29,12 +34,17 @@ export default function Contact() {
 
       // Reset form
       setFormData({ name: "", email: "", company: "", message: "" });
-      alert("Thank you for your message. We will get back to you soon.");
+      setResponse({
+        type: "success",
+        message: "Thank you for your message. We will get back to you soon.",
+      });
     } catch (error) {
       console.error("Error sending message:", error);
-      alert(
-        "Sorry, there was an error sending your message. Please try again later."
-      );
+      setResponse({
+        type: "error",
+        message:
+          "Sorry, there was an error sending your message. Please try again later.",
+      });
     }
   };
 
@@ -56,8 +66,48 @@ export default function Contact() {
         justifyContent: "center",
         alignItems: "center",
         minHeight: "60vh",
+        position: "relative",
       }}
     >
+      {response && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            backdropFilter: "blur(4px)",
+            WebkitBackdropFilter: "blur(4px)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 1000,
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: "ivory",
+              padding: "2rem",
+              borderRadius: "8px",
+              maxWidth: "500px",
+              width: "90%",
+              textAlign: "center",
+              boxShadow: "0 0 24px rgba(0, 0, 0, 0.25)",
+            }}
+          >
+            <p style={{ marginBottom: "1.5rem" }}>{response.message}</p>
+            <button
+              onClick={() => setResponse(null)}
+              className="btn"
+              style={{ width: "100%" }}
+            >
+              Dismiss
+            </button>
+          </div>
+        </div>
+      )}
       <form
         onSubmit={handleSubmit}
         style={{
