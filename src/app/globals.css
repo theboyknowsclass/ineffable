@@ -48,6 +48,14 @@ body {
   flex-direction: column;
 }
 
+a {
+  color: var(--secondary-color);
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
 .nav-link {
   color: var(--secondary-color);
   text-decoration: none;
