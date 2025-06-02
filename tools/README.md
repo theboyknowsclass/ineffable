@@ -17,10 +17,44 @@ Both images are maximized and centered for a clean, iconic look.
 - [Pillow](https://python-pillow.org/)
 - [PlayfairDisplay-Bold.ttf](https://fonts.google.com/specimen/Playfair+Display) font file in `tools/fonts/`
 
-Install dependencies:
-```sh
-pip install -r requirements.txt
-```
+### macOS Setup Instructions
+
+On macOS, it is recommended to use a virtual environment with Python 3.12 (since Pillow and other packages may not yet support Python 3.13+).
+
+1. Install Python 3.12 with Homebrew:
+   ```sh
+   brew install python@3.12
+   ```
+2. Create a virtual environment using Python 3.12:
+   ```sh
+   /opt/homebrew/bin/python3.12 -m venv venv312
+   ```
+3. Activate the virtual environment:
+   ```sh
+   source venv312/bin/activate
+   ```
+4. Install dependencies:
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+### Windows Setup Instructions
+
+On Windows, you can use the built-in Python installer and venv module. Python 3.8+ is supported.
+
+1. Install Python 3.8 or newer from [python.org](https://www.python.org/downloads/).
+2. Create a virtual environment:
+   ```sh
+   python -m venv venv
+   ```
+3. Activate the virtual environment:
+   ```sh
+   venv\Scripts\activate
+   ```
+4. Install dependencies:
+   ```sh
+   pip install -r requirements.txt
+   ```
 
 ## Usage
 
@@ -38,4 +72,4 @@ The generated images will appear in `public/images/`.
 
 ---
 
-For questions or improvements, please update this README or the script as needed. 
+For questions or improvements, please update this README or the script as needed.
