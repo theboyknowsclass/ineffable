@@ -39,6 +39,12 @@ export default function Home() {
         <p style={{ fontSize: "2rem", fontWeight: 300 }}>
           a software consultancy
         </p>
+        <p style={{ fontSize: "1.125rem" }}>
+          We transform your ideas into extraordinary digital experiences.
+          <br />
+          <i>Ineffable</i> crafts elegant, innovative apps that bring your
+          vision to life.
+        </p>
       </div>
     </div>
   );
